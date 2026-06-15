@@ -52,9 +52,9 @@ def save_dimacs(clauses: list[list[int]], n: int, output_path: str | Path = None
             f.write(" ".join(map(str, clause)) + " 0\n")
 
 def main():
-    n = 6
-    cnf = generate_cnf(n)
-    save_dimacs(clauses = cnf, n = n)
+    for n in range(1, 101):
+        cnf = generate_cnf(n)
+        save_dimacs(clauses = cnf, n = n)
 
 if __name__ == "__main__":
     main()
